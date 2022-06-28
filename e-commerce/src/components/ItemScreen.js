@@ -35,13 +35,32 @@ export default function ItemScreen() {
                 />
               </Col>
               <Col sm={6} md={6}>
-                <Card.Title>{item.productName}</Card.Title>
-                <Card.Text>{item.brandName}</Card.Text>
-                <Card.Text>₹{item.price}</Card.Text>
-                <Card.Text>{item.RAM}</Card.Text>
-                <Card.Text>{item.internalStorage}</Card.Text>
-                <Card.Text>{item.battery}</Card.Text>
-                <Card.Text>{item.productDescription}</Card.Text>
+                <Card.Title>
+                  <strong>ModelName: </strong> {item.productName}
+                </Card.Title>
+                <Card.Text>
+                  <strong>Brand: </strong>
+                  {item.brandName}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Price:</strong> ₹{item.price}
+                </Card.Text>
+                <Card.Text>
+                  <strong>RAM: </strong>
+                  {item.RAM}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Internal Storage: </strong>
+                  {item.internalStorage}
+                </Card.Text>
+                <Card.Text>
+                  <strong>Battery: </strong>
+                  {item.battery}
+                </Card.Text>
+                <Card.Text>
+                  <strong>About: </strong>
+                  {item.productDescription}
+                </Card.Text>
                 <Row className="mb-5">
                   <Col sm={3} md={3} lg={3}>
                     <Button type="button" onClick={updateItem}>

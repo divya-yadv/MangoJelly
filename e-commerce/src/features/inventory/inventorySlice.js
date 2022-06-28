@@ -78,40 +78,15 @@ export const inventorySlice = createSlice({
         };
       },
     },
-    // itemAdded: {
-    //   reducer(state, action) {
-    //     state.push(action.payload);
-    //   },
-    //   prepare(
-    //     productName,
-    //     productSlug,
-    //     productThumbnail,
-    //     price,
-    //     productDescription,
-    //     brandName,
-    //     RAM,
-    //     internalStorage,
-    //     screenSize
-    //   ) {
-    //     return {
-    //       payload: {
-    //         productId: nanoid(),
-    //         productName,
-    //         productSlug,
-    //         productThumbnail,
-    //         price,
-    //         productDescription,
-    //         brandName,
-    //         RAM,
-    //         internalStorage,
-    //         screenSize,
-    //       },
-    //     };
-    //   },
-    // },
+    itemDeleted(state, action) {
+      return state.filter((item) => item.productId !== action.payload);
+    },
+    itemUpdated(state, action) {
+      return state.filter((item) => item.productId !== action.payload);
+    },
   },
 });
 
 export const allItems = (state) => state.inventory;
-export const { itemAdded } = inventorySlice.actions;
+export const { itemAdded, itemDeleted, itemUpdated } = inventorySlice.actions;
 export default inventorySlice.reducer;
